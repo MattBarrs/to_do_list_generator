@@ -1,0 +1,18 @@
+<doctype html>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+<center>
+<title>New Task</title>
+<h2>Creating New Task</h2>
+
+{% from "_formhelpers.html" import render_field %}
+<form method=post>
+    <dl>
+        {{ render_field(form.name) }}
+        {{ render_field(form.details) }}
+    </dl>
+    <p><input type=submit value=Submit>
+</form>
+{% block content %}
+{% endblock %}
+
+</center>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+  <center><head>
+  <style>
+  ul#menu li {
+      display:inline;
+  }
+  </style>
+
+  {% if title %}
+    <title>{{ title }}</title>
+  {% endif %}
+  {% if header1 %}
+    <h1>{{ header1 }}</h1>
+  {% endif %}
+
+  </head>
+  <body>
+    <ul id="menu">
+      <li><a href="{{ url_for('.new_task') }}"> New Task </a>&nbsp&nbsp</li>
+      <li><a href="{{ url_for('.tasks_finished') }}"> View Completed Tasks </a>&nbsp&nbsp</li>
+      <li><a href="{{ url_for('.tasks_uncomplete') }}">View Uncompleted Tasks </a></li>
+    </ul>
+
+    <div>
+      {% block content %}{% endblock %}
+    </div>
+  </body>
+</center>
+</html>

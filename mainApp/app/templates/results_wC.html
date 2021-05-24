@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+<head>
+ <script type="text/javascript" src="{{ url_for('static', filename='jquery.min.js') }}" ></script>
+ <script type="text/javascript" src="{{ url_for('static', filename='ajax_js.js') }}" ></script>
+</head>
+
+ {% block content %}
+
+<!--
+<h3>How do you feel about this module? Click the best response:</h3>
+ <a id="sad">Sad.</a><br/>
+ <a id="happy">Happy.</a><br/>
+ <a id="confused">Confused.</a><br/>
+
+ <p id="response"></p>
+-->
+<title>Search Results - Flask Music Database</title>
+ <table id="table" border="1">
+  <thead>
+   {%- for column in columns %}
+      <th>{{ column }}</th>
+   {%- endfor %}
+   <th>
+     Mark Completed
+   </th>
+  </thead>
+  <tbody>
+  {%- for row in items %}
+     <tr>
+     {%- for column in columns %}
+        <td>{{ row|attr(column) }}</td>
+     {%- endfor %}
+     <td>
+       <a href="/mark_complete/{{row.Id}}">Click</a></td>
+     </tr>
+  {%- endfor %}
+  </tbody>
+  </table>
+
+{% endblock %}
+</center>

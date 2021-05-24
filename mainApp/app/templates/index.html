@@ -1,0 +1,22 @@
+<!-- ./templates/index.html -->
+    <html>
+    <head>
+      <!-- link to the Todo MVC index.css file -->
+      <title>Realtime Todo List</title>
+    </head>
+
+    <body>
+      <section class="todoapp">
+        <header class="header">
+          <h1>Todos</h1>
+          <a href="{{ url_for('.new_task') }}"> New Task </a>
+        </header>
+
+        <section class="main">
+          <ul class="todo-list"></ul>
+        </section>
+
+        <footer class="footer"></footer>
+      </section>
+    </body>
+    </html>
